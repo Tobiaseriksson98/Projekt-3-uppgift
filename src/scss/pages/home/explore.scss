@@ -1,0 +1,30 @@
+.explore {
+    background-color: var(--color-accent);
+    width: 70%;
+    margin: auto;
+    height: 800px;
+
+    &__inner {
+        height: 100%;
+        &--title {
+            background-color: red; //temp
+            color: white;
+        }
+    
+        &--subtitle {
+            background-color: yellow; //temp
+            color: white;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-height: 800px;
+    }
+
+    &__footer {
+        background-color: blue; //temp
+    }
+
+
+}

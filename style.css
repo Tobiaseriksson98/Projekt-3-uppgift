@@ -106,7 +106,7 @@ li {
 }
 
 .site-header {
-  position: fixed;
+  position: absolute;
   height: 160px;
   width: 100%;
   display: grid;
@@ -122,6 +122,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
 }
 .site-header__branding {
   display: block;
@@ -453,6 +454,31 @@ li {
 }
 .social__link {
   color: var(--color-light);
+}
+
+.explore {
+  background-color: var(--color-accent);
+  width: 70%;
+  margin: auto;
+  height: 800px;
+}
+.explore__inner {
+  height: 100%;
+}
+.explore__inner--title {
+  background-color: red;
+  color: white;
+}
+.explore__inner--subtitle {
+  background-color: yellow;
+  color: white;
+}
+.explore__content {
+  width: 100%;
+  max-height: 800px;
+}
+.explore__footer {
+  background-color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */

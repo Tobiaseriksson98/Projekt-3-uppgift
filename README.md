@@ -8,4 +8,4 @@
 `git clone https://github.com/Tobiaseriksson98/Sass-base-2022.git . && rm -rf .git`
 
 ## Develop
-`sass --watch src/scss/style.scss style.css`# Projekt-3-uppgift
+`sass --watch src/scss/style.scss style.css`

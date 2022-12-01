@@ -1,7 +1,7 @@
 @use '../utilities/responsive';
 
 .site-header {
-    position: fixed;
+    position: absolute;
     height: 160px;
     width: 100%;
     display: grid;
@@ -16,6 +16,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: sticky;
     }
 
     &__branding {
