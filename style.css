@@ -347,7 +347,7 @@ li {
 }
 @media screen and (max-width: 30rem) {
   .hero__pagination .button--next,
-  .hero__pagination .button--prev {
+.hero__pagination .button--prev {
     max-width: 2rem;
   }
 }
@@ -460,7 +460,10 @@ li {
   background-color: var(--color-accent);
   width: 70%;
   margin: auto;
-  height: 900px;
+  min-height: 900px;
+}
+.explore__image {
+  position: relative;
 }
 .explore__inner {
   height: 100%;
@@ -484,8 +487,8 @@ li {
   max-height: 800px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: relative;
+  gap: 48px;
 }
 .explore__image {
   max-width: 380px;
@@ -504,9 +507,9 @@ li {
   margin: 6px;
 }
 .explore__button {
-  position: absolute;
-  bottom: 128px;
-  left: 48px;
+  margin-top: 48px;
+  margin-left: 48px;
+  margin-bottom: 128px;
   color: black;
 }
 .explore__pagination {
@@ -515,8 +518,9 @@ li {
   gap: var(--gap-s);
   flex: 1;
   position: absolute;
-  right: 0;
-  margin-right: 175px;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
 }
 .explore__pagination::before {
   content: "";
