@@ -1,32 +1,68 @@
+@use '../../components/buttons' as button;
+@use '../../utilities/responsive';
+
 .explore {
-    background-color: var(--color-accent);
+    background-image: url("assets/images/pexels-taryn-elliott-4253928.jpg");
+    background-size: cover;
     width: 70%;
     margin: auto;
     min-height: 900px; // Ändrade height till min-height för att den ska kunna växa om den behöver.
-    // opacity: 0.47;
-
+    margin-bottom: 6rem;
     // La till elementet jag skapade och gav det position relative så din pagination kan hålla sin innanför.
     &__image {
         position: relative;
+        max-width: 480px;
+        width: 100%;
+        margin-right: 68px;
+        margin-bottom: 88px;
     }
 
     &__inner {
         height: 100%;
         position: relative;
 
+            img {
+                border-radius: 5px;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.8);
+                transform: translateY(40%);
+                opacity: 0.85;
+
+                @include responsive.max(1540px) {
+                    max-width: 460px;
+                }
+
+                @include responsive.max(1225px) {
+                    height: 400px;
+                    max-width: 320px;
+                }
+
+                @include responsive.max(800px) {
+                    display: none;
+                }
+                    }
+
         &--title {
-            color: black;
+            color: var(--color-light);
             text-align: center;
             font-size: 76px;
             padding-top: 32px;
             margin-bottom: 0;
+
+            @include responsive.max (960px) {
+                font-size: 56px;
+            }
         }
-    
+        
         &--subtitle {
-            color: black; //temp
+            color: var(--color-dark);
+            opacity: 0.34;
             text-align: center;
             font-size: 28px;
             margin-top: 0;
+
+            @include responsive.max (960px) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -37,43 +73,69 @@
         max-height: 800px;
         display: flex;
         justify-content: space-between;
-        //align-items: center;
         position: relative;
-        gap: 48px;                      // la till gap
-    }
+        gap: 48px;
 
-    &__image {
-        max-width: 380px;
-        width: 100%;
-        margin-right: 68px;
-        margin-bottom: 88px;
-        position: relative;
-        
     }
-
+    
+    
     &__list {
         font-size: 28px;
         height: 400px;
         margin-left: 28px;
+        max-width: 800px;
+        width: 100%;
+        
+        @include responsive.max(800px) {
+            justify-content: center;
+            align-items: center;
+        }
     }
     
     &__list-items {
-        padding:10px;
+        padding:var(--gap-s);
         margin:6px;
+        color: var(--color-light);
+        
+        :hover {
+            color: var(--color-accent);
+            }
+            a {
+                color: var(--color-light);
+            }
+
+            // Responsive
+            @include responsive.max(1440px) {
+                font-size: 20px;
+            }
+
+            @include responsive.max(55rem) {
+                font-size: 14px;
+            }
+
     }
 
     // Tog bort position absolute så den kan följa storleken av text.
     // Ändrade därför positionering med margin
     &__button {
-        //position: absolute;
-        //bottom: 128px;
-        //left: 48px;
-        margin-top: 48px;
-        margin-left: 48px;
+        @include button.default($icon-opacity: 0.34);
+        margin-top: 88px;
+        margin-left: var(--gap-l);
         margin-bottom: 128px;
-        color: black; //temp
-        //make color on svg aswell
 
+        svg {
+            transition: all 0.2s;
+        }
+
+        &:hover {
+            svg {
+                opacity: 1;
+                transform: rotate(90deg);
+            }
+        }
+
+        
+          
     }
 
 
@@ -88,10 +150,9 @@
         flex: 1;
         position: absolute;
         left: 50%;                      // Ändrade right till left och centrerade utgångsläget för nav
-        bottom: 32px;                   // La till botten
+        bottom: var(--gap-m);                   // La till botten
         transform: translateX(-50%);    // Centrerade sen nav utifrån sin left position
-        //margin-right: 175px;          // Tog bort margin
-
+        top: 390px;
         &::before {
             content: '';
             display: block;
@@ -99,6 +160,11 @@
             flex: 1;
             background-color: var(--color-light);
             opacity: 0.34;
+    }
+
+        // Reponsives
+        @include responsive.max(1225px) {
+        display: none;
     }
     
 
@@ -110,6 +176,22 @@
         &__total {
             &:before {
                 content: '/'
+            }
+        }
+
+        color: white;
+    }
+
+    .button--next,
+    .button--prev {
+
+        #Union_1, #Union_2 {
+            transition: all 0.2s;
+        }
+
+        &:hover {
+            #Union_1, #Union_2 {
+                fill: var(--color-accent);
             }
         }
     }
